@@ -518,28 +518,25 @@ if (file_exists(DOKU_TPLINC."lang/".$conf["lang"]."/style.css")){
 <div class="">
   <div class="main-wrapper"> <!-- Replace the row class with our custom wrapper -->
     <!-- Sidebar -->
-    <div class="sidebar collapse collapse-horizontal" id="sidebar"> <!-- Remove Bootstrap column classes -->
+    <div class="sidebar collapse" id="sidebar"> <!-- Removed 'collapse-horizontal' -->
       <!-- Header for mobile view -->
-      <div class="d-md-none border-bottom p-2">
-        <!-- Top row with search and close button -->
-        <div class="d-flex justify-content-between align-items-center">
-          <!-- Search form -->
-          <?php if (actionOK("search")){ ?>
-          <form class="d-flex me-2" action="<?php echo wl(); ?>" accept-charset="utf-8" id="dw__search_mobile">
-            <input type="hidden" name="do" value="search" />
-            <div class="input-group input-group-sm" style="width: 160px;">
-              <input class="form-control form-control-sm" type="search" id="qsearch__in_mobile" 
-                     accesskey="f" name="id" placeholder="<?php echo hsc($lang['vector_search']); ?>..." />
-              <button class="btn btn-outline-primary btn-sm" type="submit">
-                <?php echo hsc($lang['vector_btn_search']); ?>
-              </button>
-            </div>
-          </form>
-          <?php } ?>
-          
-          <!-- Close button -->
-          <button type="button" class="btn-close" aria-label="Close" id="sidebarCloseButton"></button>
-        </div>
+      <div class="d-md-none border-bottom p-2 position-relative">
+        <!-- Close button positioned absolutely -->
+        <button type="button" class="btn-close" aria-label="Close" id="sidebarCloseButton"></button>
+
+        <!-- Top row with search -->
+        <?php if (actionOK("search")){ ?>
+        <form class="d-flex me-2" action="<?php echo wl(); ?>" accept-charset="utf-8" id="dw__search_mobile">
+          <input type="hidden" name="do" value="search" />
+          <div class="input-group input-group-sm" style="width: 160px;">
+            <input class="form-control form-control-sm" type="search" id="qsearch__in_mobile" 
+                   accesskey="f" name="id" placeholder="<?php echo hsc($lang['vector_search']); ?>..." />
+            <button class="btn btn-outline-primary btn-sm" type="submit">
+              <?php echo hsc($lang['vector_btn_search']); ?>
+            </button>
+          </div>
+        </form>
+        <?php } ?>
 
         <!-- Language selector below -->
         <?php if(file_exists(DOKU_PLUGIN.'translation/syntax.php')): ?>
@@ -686,6 +683,16 @@ if (file_exists(DOKU_TPLINC."lang/".$conf["lang"]."/style.css")){
                   <span class="d-md-none"><i class="bi bi-clock-history"></i></span>
                 </a>
               <?php endif; ?>
+            </div>
+
+            <!-- Theme toggle button -->
+            <div class="navbar-nav ms-2">
+              <div class="nav-item">
+                <button class="btn btn-link nav-link" id="darkModeToggle">
+                  <i class="bi bi-sun-fill" id="lightIcon"></i>
+                  <i class="bi bi-moon-fill" id="darkIcon" style="display: none;"></i>
+                </button>
+              </div>
             </div>
 
           </div>
@@ -923,12 +930,66 @@ if (file_exists(DOKU_TPLINC."lang/".$conf["lang"]."/style.css")){
 <script>
   // Ensure the sidebar toggles correctly on mobile
   document.querySelector('.navbar-toggler').addEventListener('click', function() {
-    document.getElementById('sidebar').classList.toggle('show');
+    document.getElementById('sidebar').classList.add('show');
   });
 
   // Close sidebar on mobile
   document.getElementById('sidebarCloseButton').addEventListener('click', function() {
     document.getElementById('sidebar').classList.remove('show');
+  });
+
+  // Theme switcher
+  document.addEventListener('DOMContentLoaded', function() {
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const lightIcon = document.getElementById('lightIcon');
+    const darkIcon = document.getElementById('darkIcon');
+    
+    // Function to set theme
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-bs-theme', theme);
+      localStorage.setItem('theme', theme);
+      updateIcon(theme);
+    }
+    
+    // Function to update icon
+    function updateIcon(theme) {
+      if (theme === 'dark') {
+        lightIcon.style.display = 'none';
+        darkIcon.style.display = 'inline';
+      } else {
+        lightIcon.style.display = 'inline';
+        darkIcon.style.display = 'none';
+      }
+    }
+
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    
+    // Check if user has system-level preference
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    if (savedTheme) {
+      // Use saved preference if it exists
+      setTheme(savedTheme);
+    } else {
+      // Otherwise use system preference
+      setTheme(prefersDark.matches ? 'dark' : 'light');
+    }
+    
+    // Listen for system theme changes
+    prefersDark.addEventListener('change', (e) => {
+      if (!localStorage.getItem('theme')) {
+        // Only update based on system changes if user hasn't set a preference
+        setTheme(e.matches ? 'dark' : 'light');
+      }
+    });
+    
+    // Handle manual toggle
+    darkModeToggle.addEventListener('click', function() {
+      const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      setTheme(newTheme);
+    });
   });
 </script>
 

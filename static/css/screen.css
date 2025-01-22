@@ -39,9 +39,399 @@
  ************** Styles/corrections for the template itself ********************
  ******************************************************************************/
 /* --------------- general styling  --------------- */
+:root {
+  /* Light theme variables */
+  --bg-color: #f3f3f3;
+  --text-color: #333;
+  --link-color: #436976;
+  --link-hover-color: #000;
+  --missing-link-color: #ba0000;
+  --border-color: #ddd;
+  --header-bg: #fff;
+  --sidebar-bg: #f8f9fa;
+  --card-bg: #fff;
+  --highlight-bg: #fff3cd;
+  --code-bg: #f8f9fa;
+  --input-bg: #fff;
+  --input-border: #ced4da;
+  --dropdown-bg: #fff;
+  --dropdown-hover: #e9ecef;
+}
+
+[data-bs-theme="dark"] {
+  /* Dark theme variables */
+  --bg-color: #1a1a1a;
+  --text-color: #e4e4e4;
+  --link-color: #8bb4c2;
+  --link-hover-color: #fff;
+  --missing-link-color: #ff6b6b;
+  --border-color: #444;
+  --header-bg: #2d2d2d;
+  --sidebar-bg: #2d2d2d;
+  --card-bg: #333;
+  --highlight-bg: #483e24;
+  --code-bg: #2d2d2d;
+  --input-bg: #333;
+  --input-border: #555;
+  --dropdown-bg: #333;
+  --dropdown-hover: #444;
+  --content-bg: #2d2d2d; /* New variable for main content background */
+  --toc-bg: #333; /* New variable for TOC background */
+  --toc-text: #e4e4e4; /* New variable for TOC text */
+  --toc-border: #444; /* New variable for TOC borders */
+  --toc-hover: #444; /* New variable for TOC hover state */
+  --breadcrumb-bg: #333;
+  --breadcrumb-text: #e4e4e4;
+  --breadcrumb-border: #444;
+}
+
+/* Add these new dark mode overrides */
+[data-bs-theme="dark"] {
+  /* Main content area */
+  .main-content {
+    background-color: var(--content-bg);
+    color: var(--text-color);
+  }
+
+  /* Basic text and backgrounds */
+  .dokuwiki div.page {
+    background-color: var(--content-bg);
+    color: var(--text-color);
+  }
+
+  #bodyContent {
+    background-color: var(--content-bg);
+    color: var(--text-color);
+  }
+
+  /* TOC specific styling */
+  #dw__toc {
+    background-color: var(--toc-bg);
+    border: 1px solid var(--toc-border);
+    border-radius: 0.25rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  #dw__toc h3 {
+    color: var(--toc-text);
+    margin: 0;
+    padding: 0.5rem 0;
+    font-size: 1.1rem;
+    border-bottom: 1px solid var(--toc-border);
+  }
+
+  #dw__toc .toc {
+    margin: 0;
+    padding: 0.5rem 0;
+    list-style: none;
+  }
+
+  #dw__toc ul.toc {
+    padding-left: 1.5rem;
+  }
+
+  #dw__toc ul.toc li {
+    margin: 0.25rem 0;
+  }
+
+  #dw__toc ul.toc a {
+    color: var(--link-color);
+    text-decoration: none;
+    display: block;
+    padding: 0.25rem 0;
+  }
+
+  #dw__toc ul.toc a:hover {
+    color: var(--link-hover-color);
+    background-color: var(--toc-hover);
+    border-radius: 0.25rem;
+  }
+
+  /* Level indentation for TOC */
+  #dw__toc ul.toc li.level2 { padding-left: 1rem; }
+  #dw__toc ul.toc li.level3 { padding-left: 2rem; }
+  #dw__toc ul.toc li.level4 { padding-left: 3rem; }
+  #dw__toc ul.toc li.level5 { padding-left: 4rem; }
+
+  /* Fix text colors in various elements */
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color);
+  }
+
+  a, a:visited {
+    color: var(--link-color);
+  }
+
+  a:hover {
+    color: var(--link-hover-color);
+  }
+
+  /* Table styles */
+  table.inline {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+  }
+
+  table.inline th {
+    background-color: var(--header-bg);
+    color: var(--text-color);
+    border-color: var(--border-color);
+  }
+
+  table.inline td {
+    border-color: var(--border-color);
+    color: var(--text-color);
+  }
+
+  /* Code blocks and inline code */
+  pre, code, .code {
+    background-color: var(--code-bg) !important;
+    color: var(--text-color) !important;
+    border-color: var(--border-color) !important;
+  }
+
+  /* Form elements */
+  input, textarea, select {
+    background-color: var(--input-bg);
+    border-color: var(--input-border);
+    color: var(--text-color);
+  }
+
+  /* Bootstrap card overrides */
+  .card {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+  }
+
+  .card-header {
+    background-color: var(--header-bg);
+    border-bottom-color: var(--border-color);
+    color: var(--text-color);
+  }
+
+  /* Fix any remaining white backgrounds */
+  .bg-white {
+    background-color: var(--content-bg) !important;
+  }
+
+  .bg-light {
+    background-color: var(--card-bg) !important;
+  }
+
+  /* Basic text and backgrounds */
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  
+  /* Links */
+  a, a:visited { color: var(--link-color); }
+  a:hover { color: var(--link-hover-color); }
+  
+  /* Form elements */
+  input, textarea, select {
+    background-color: var(--input-bg) !important;
+    border-color: var(--input-border) !important;
+    color: var(--text-color) !important;
+  }
+  
+  /* Tables */
+  table.inline th {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+  }
+  
+  table.inline td {
+    border-color: var(--border-color);
+  }
+  
+  /* Code blocks */
+  pre, code, .code {
+    background-color: var(--code-bg) !important;
+    color: var(--text-color) !important;
+    border-color: var(--border-color) !important;
+  }
+  
+  /* Navigation and UI elements */
+  .navbar {
+    background-color: var(--header-bg) !important;
+    border-color: var(--border-color) !important;
+  }
+  
+  .sidebar {
+    background-color: var(--sidebar-bg) !important;
+    border-color: var(--border-color) !important;
+  }
+  
+  .card {
+    background-color: var(--card-bg) !important;
+    border-color: var(--border-color) !important;
+  }
+  
+  /* Override Bootstrap classes */
+  .bg-light { background-color: var(--card-bg) !important; }
+  .bg-white { background-color: var(--header-bg) !important; }
+  .border-bottom { border-color: var(--border-color) !important; }
+  
+  /* Buttons */
+  .btn-outline-primary,
+  .btn-outline-secondary,
+  .btn-outline-info {
+    color: var(--link-color);
+    border-color: var(--border-color);
+  }
+  
+  .btn-outline-primary:hover,
+  .btn-outline-secondary:hover,
+  .btn-outline-info:hover {
+    background-color: var(--link-color);
+    color: var(--bg-color);
+  }
+  
+  /* Dropdowns */
+  .dropdown-menu {
+    background-color: var(--dropdown-bg);
+    border-color: var(--border-color);
+  }
+  
+  .dropdown-item {
+    color: var(--text-color);
+  }
+  
+  .dropdown-item:hover {
+    background-color: var(--dropdown-hover);
+    color: var(--link-hover-color);
+  }
+  
+  /* Editor */
+  .dokuwiki textarea.edit {
+    background-color: var(--input-bg) !important;
+    color: var(--text-color) !important;
+  }
+  
+  /* Wiki content specific */
+  #dw__toc {
+    background-color: var(--card-bg) !important;
+    border-color: var(--border-color) !important;
+  }
+  
+  .dokuwiki div.page {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  /* Admin interface */
+  .admin_tasks {
+    background-color: var(--card-bg);
+  }
+  
+  .admin_tasks li {
+    border-color: var(--border-color) !important;
+  }
+
+  /* Sidebar navigation specific styles */
+  .sidebar .portal {
+    background-color: var(--sidebar-bg);
+    border-color: var(--border-color);
+  }
+
+  .sidebar .portal h5 {
+    background-color: var(--portal-header-bg);
+    color: var(--portal-header-color);
+    border-color: var(--border-color);
+  }
+
+  .sidebar .portal .body {
+    background-color: var(--sidebar-bg);
+    color: var(--text-color);
+  }
+
+  .sidebar .dokuwiki ul li a {
+    color: var(--text-color);
+  }
+
+  .sidebar .dokuwiki ul li a:hover {
+    background-color: var(--dropdown-hover);
+    color: var(--link-hover-color);
+  }
+
+  /* Admin tasks list in sidebar */
+  .admin-list-wrapper {
+    background-color: var(--sidebar-bg);
+  }
+
+  .admin-list-wrapper ul.admin_tasks li {
+    border-color: var(--border-color);
+  }
+
+  .admin-list-wrapper ul.admin_tasks a {
+    color: var(--link-color);
+  }
+
+  .admin-list-wrapper ul.admin_tasks a:hover {
+    color: var(--link-hover-color);
+  }
+
+  /* Portal boxes */
+  .portal {
+    background-color: var(--sidebar-bg);
+  }
+
+  .portal h5 {
+    background-color: var(--portal-header-bg);
+    color: var(--portal-header-color);
+    border: 1px solid var(--border-color);
+  }
+
+  .portal .body {
+    background-color: var(--sidebar-bg);
+    color: var(--text-color);
+  }
+
+  /* Navigation menu items */
+  #p-navigation .body,
+  #p-coll-print-export .body,
+  #p-tb .body {
+    background-color: var(--sidebar-bg);
+    color: var(--text-color);
+  }
+
+  #p-navigation a,
+  #p-coll-print-export a,
+  #p-tb a {
+    color: var(--link-color);
+  }
+
+  #p-navigation a:hover,
+  #p-coll-print-export a:hover,
+  #p-tb a:hover {
+    color: var(--link-hover-color);
+    background-color: var(--dropdown-hover);
+  }
+
+  /* Breadcrumbs dark mode */
+  .catlinks {
+    background-color: var(--breadcrumb-bg);
+    color: var(--breadcrumb-text);
+    border-color: var(--breadcrumb-border);
+  }
+
+  .catlinks a {
+    color: var(--link-color);
+  }
+
+  .catlinks a:hover {
+    color: var(--link-hover-color);
+  }
+
+  .bchead,
+  .bcsep {
+    color: var(--text-color);
+  }
+}
+
 html {
-  background-color: #f3f3f3;
-  color: __text__;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   overflow-x: auto;
   overflow-y: auto;
 }
@@ -411,12 +801,12 @@ html>body div.dokuwiki button.button {
 /* links */
 div.dokuwiki a:link,
 div.dokuwiki a:visited {
-  color: #436976;
+  color: var(--link-color);
   text-decoration: none;
 }
 div.dokuwiki a:hover,
 div.dokuwiki a:active {
-  color: __text__;
+  color: var(--link-hover-color);
   text-decoration: underline;
 }
 
@@ -630,7 +1020,7 @@ div#content .dokuwiki samp,
 div#content .dokuwiki kbd,
 div#content .dokuwiki tt {
   font-size: 100%;
-  background-color: #f9f9f9;
+  background-color: var(--code-bg);
   color: __text__;
   font-size: 1em;
   direction: ltr;
@@ -670,10 +1060,13 @@ div#content .dokuwiki dl.code dt a {
 .catlinks {
   font-size: 80%;
   margin-bottom: 1em;
+  background: var(--bs-light);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
 }
-.catlinks p,
-.catlinks div {
-  margin: 0.3em 0;
+
+.catlinks p {
+  margin: 0;
 }
 
 /* tables */
@@ -686,7 +1079,7 @@ th[align="right"] {
   text-align: right;
 }
 .dokuwiki table.inline {
-  background-color: __background__;
+  background-color: var(--card-bg);
   width: auto;
   border-collapse: collapse;
   border-spacing: 0;
@@ -1203,15 +1596,23 @@ div.dokuwiki #dw__toc ul.toc {
   background-color: transparent !important;
   border: 0 none;
   margin-bottom: 0;
+  list-style: none !important;
+  list-style-image: none !important;
+  padding-left: 0;
 }
 
 div.dokuwiki #dw__toc ul.toc li {
   list-style-image: none;
   list-style-type: none;
-  background: transparent url(static/3rd/dokuwiki/tocdot2.gif) 0 0.6em no-repeat;
-  padding-left: 0.4em !important;
-  margin-bottom: 0.1em !important;
+  background: none !important; /* Remove the dot background image */
+  padding-left: 0 !important;
 }
+
+div.dokuwiki #dw__toc ul.toc li.level1 { padding-left: 0 !important; }
+div.dokuwiki #dw__toc ul.toc li.level2 { padding-left: 1rem !important; }
+div.dokuwiki #dw__toc ul.toc li.level3 { padding-left: 2rem !important; }
+div.dokuwiki #dw__toc ul.toc li.level4 { padding-left: 3rem !important; }
+div.dokuwiki #dw__toc ul.toc li.level5 { padding-left: 4rem !important; }
 
 
 /* --------------- generic content classes --------------- */
@@ -1412,9 +1813,9 @@ div.dokuwiki .section_highlight {
 
 /* --------------- JS popup ----------------- */
 .JSpopup {
-  background-color: __background__;
-  color: __text__;
-  border: 1px solid __border__;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
   line-height: 1.2;
   padding: 0 .2em;
 }
@@ -1491,9 +1892,9 @@ body {
 .sidebar {
     position: static;
     min-height: 100vh;
-    background: #f8f9fa;
+    background: var(--sidebar-bg);
     padding: 1rem 0;
-    border-right: 1px solid rgba(0,0,0,.1);
+    border-right: 1px solid var(--border-color);
 }
 
 .sidebar .portal {
@@ -1973,4 +2374,60 @@ main.main-content {
   .btn-group .btn span.d-md-none {
     display: inline !important;
   }
+}
+
+/* Dark mode specific adjustments */
+[data-bs-theme="dark"] .btn-outline-primary {
+  color: #8bb4c2;
+  border-color: #8bb4c2;
+}
+
+[data-bs-theme="dark"] .btn-outline-secondary {
+  color: #aaa;
+  border-color: #666;
+}
+
+[data-bs-theme="dark"] .dropdown-menu {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+[data-bs-theme="dark"] .dropdown-item {
+  color: var(--text-color);
+}
+
+[data-bs-theme="dark"] .dropdown-item:hover {
+  background-color: var(--sidebar-bg);
+  color: var(--link-hover-color);
+}
+
+/* Adjust sidebar for mobile to take full width */
+@media (max-width: 767.98px) {
+    .sidebar {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        transition: left 0.3s ease;
+        background-color: #ffffff; /* Adjust as needed */
+        z-index: 1050; /* Ensure it's above other elements */
+    }
+    .sidebar.show {
+        left: 0;
+    }
+
+    /* Style for the close button */
+    #sidebarCloseButton {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        z-index: 1060;
+    }
+
+    /* Ensure navigation takes full height */
+    .sidebar-nav {
+        height: 100%;
+        overflow-y: auto;
+    }
 }
