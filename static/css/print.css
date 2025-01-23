@@ -136,3 +136,125 @@ div#content .dokuwiki span.wrap_download {
   border-bottom: 1px dashed;
   padding: 0;
 }
+
+* {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+}
+
+/* Hide unnecessary elements */
+.navbar,
+.sidebar,
+#dw__toc,
+.dokuwiki div.secedit,
+.noprint,
+.editButtons,
+.docInfo,
+#dokuwiki__header,
+#dokuwiki__aside,
+#dokuwiki__footer,
+#sidebar,
+.catlinks {
+    display: none !important;
+}
+
+/* Adjust layout for printing */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: serif;
+    font-size: 12pt;
+    width: 100% !important;
+    min-height: auto !important;
+}
+
+.main-wrapper {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.main-content {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+}
+
+/* Links handling */
+a {
+    text-decoration: none !important;
+}
+
+a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 90%;
+}
+
+/* Don't show links for images or javascript/internal links */
+a[href^="javascript:"]:after,
+a[href^="#"]:after,
+a[href^="data:"]:after {
+    content: "";
+}
+
+/* Break URLs */
+a[href]:after {
+    word-wrap: break-word;
+}
+
+/* Tables */
+table {
+    page-break-inside: avoid;
+}
+
+/* Images */
+img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+}
+
+h1 { font-size: 24pt; }
+h2 { font-size: 20pt; }
+h3 { font-size: 16pt; }
+h4, h5, h6 { font-size: 14pt; }
+
+/* Page breaks */
+p, blockquote, ul, ol, dl, pre {
+    page-break-inside: avoid;
+}
+
+/* Expand content to full width */
+#dokuwiki__content {
+    margin: 0 !important;
+    width: 100% !important;
+}
+
+/* Remove any fixed positioning */
+.sticky-top {
+    position: static !important;
+}
+
+/* Force background colors for code blocks */
+pre, code {
+    background-color: #fff !important;
+    border: 1px solid #999 !important;
+}
+
+main.main-content {
+    padding: 0 !important;
+}
+
+main.main-content {
+    min-width: 0!important;
+}

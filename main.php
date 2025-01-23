@@ -753,7 +753,7 @@ if (file_exists(DOKU_TPLINC."lang/".$conf["lang"]."/style.css")){
       </nav>
 
       <!-- Page content -->
-      <div class="py-4">
+      <div class="py-2">
         <?php 
         // Remove the following block to eliminate the duplicate TOC
         /*

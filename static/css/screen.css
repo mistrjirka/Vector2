@@ -85,7 +85,7 @@
   --breadcrumb-bg: #333;
   --breadcrumb-text: #e4e4e4;
   --breadcrumb-border: #444;
-  --main-bg: #1a1f2b; /* Darker background with blue tint */
+  --main-bg: #2d2d2d; /* Darker background with blue tint */
   --main-border: #2a303c;
 }
 
@@ -2468,4 +2468,8 @@ main.main-content {
 [data-bs-theme="dark"] main.main-content {
   background-color: var(--main-bg);
   border-color: var(--main-border);
+}
+
+#bodyContent .dw__toc {
+  display: none !important;
 }
