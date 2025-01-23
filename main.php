@@ -629,7 +629,7 @@ if (file_exists(DOKU_TPLINC."lang/".$conf["lang"]."/style.css")){
     </div>
 
     <!-- Main content -->
-    <main class="main-content"> <!-- Replace Bootstrap column classes with our custom class -->
+    <main class="main-content">
       <!-- Header -->
       <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
         <div class="container-fluid">
@@ -752,172 +752,148 @@ if (file_exists(DOKU_TPLINC."lang/".$conf["lang"]."/style.css")){
         </div>
       </nav>
 
-      <!-- Page content -->
-      <div class="py-2">
-        <?php 
-        // Remove the following block to eliminate the duplicate TOC
-        /*
-        if ($toc = tpl_toc(true)) {
-          echo '<div class="d-md-none mb-4">';
-          echo '<div class="card">';
-          echo '<div class="card-header">Table of Contents</div>';
-          echo '<div class="card-body">';
-          echo $toc;
-          echo '</div>';
-          echo '</div>';
-        }
-        */
-        ?>
-
-        <div class="row">
-
-        <div class="row">
-          <div class="<?php echo $toc ? 'col-md-9' : 'col-12'; ?>">
-            <?php // ...existing content code... ?>
-          </div>
-
-          <?php if ($toc): ?>
-          <!-- TOC for desktop -->
-          <div class="col-md-3 d-none d-md-block">
-            <div class="sticky-top pt-3">
-              <div class="card">
-                <div class="card-body">
-                  <?php echo $toc; ?>
-                </div>
-              </div>
-            </div>
-          </div>
-          <?php endif; ?>
-        </div>
-
-        <?php
-        //show messages (if there are any)
-        html_msgarea();
-        //show site notice
-        if (tpl_getConf("vector_sitenotice")){
-            //detect wiki page to load as content
-            if (!empty($transplugin) && //var comes from conf/boxes.php
-                is_object($transplugin) &&
-                tpl_getConf("vector_sitenotice_translate")){
-                //translated site notice?
-                $transplugin_langcur = $transplugin->hlp->getLangPart(cleanID(getId())); //current language part
-                $transplugin_langs   = explode(" ", trim($transplugin->getConf("translations"))); //available languages
-                if (empty($transplugin_langs) ||
-                    empty($transplugin_langcur) ||
-                    !is_array($transplugin_langs) ||
-                    !in_array($transplugin_langcur, $transplugin_langs)) {
-                    //current page is no translation or something is wrong, load default site notice
-                    $sitenotice_location = tpl_getConf("vector_sitenotice_location");
-                } else {
-                    //load language specific site notice
-                    $sitenotice_location = tpl_getConf("vector_sitenotice_location")."_".$transplugin_langcur;
-                }
-            }else{
-                //default site notice, no translation
-                $sitenotice_location = tpl_getConf("vector_sitenotice_location");
-            }
-
-            //we have to show a custom site notice
-            if (empty($conf["useacl"]) ||
-                auth_quickaclcheck(cleanID($sitenotice_location)) >= AUTH_READ){ //current user got access?
-                echo "\n  <div id=\"siteNotice\" class=\"noprint\">\n";
-                //get the rendered content of the defined wiki article to use as
-                //custom site notice.
-                $interim = tpl_include_page($sitenotice_location, false);
-                if ($interim === "" ||
-                    $interim === false){
-                    //show creation/edit link if the defined page got no content
-                    echo "[&#160;";
-                    tpl_pagelink($sitenotice_location, hsc($lang["vector_fillplaceholder"]." (".hsc($sitenotice_location).")"));
-                    echo "&#160;]<br />";
-                }else{
-                    //show the rendered page content
-                    echo  "    <div class=\"dokuwiki\">\n" //dokuwiki CSS class needed cause we are showing rendered page content
-                         .$interim."\n    "
-                         ."</div>";
-                }
-                echo "\n  </div>\n";
-            }
-        }
-        //show breadcrumps if enabled and position = top
-        if ($conf["breadcrumbs"] == true &&
-            $ACT !== "media" && //var comes from DokuWiki
-            (empty($conf["useacl"]) || //are there any users?
-             $loginname !== "" || //user is logged in?
-             !tpl_getConf("vector_closedwiki")) &&
-            tpl_getConf("vector_breadcrumbs_position") === "top"){
-            echo "\n  <div class=\"catlinks noprint\"><p>\n    ";
-            tpl_breadcrumbs();
-            echo "\n  </p></div>\n";
-        }
-        //show hierarchical breadcrumps if enabled and position = top
-        if ($conf["youarehere"] == true &&
-            $ACT !== "media" && //var comes from DokuWiki
-            (empty($conf["useacl"]) || //are there any users?
-             $loginname !== "" || //user is logged in?
-             !tpl_getConf("vector_closedwiki")) &&
-            tpl_getConf("vector_youarehere_position") === "top"){
-            echo "\n  <div class=\"catlinks noprint\"><p>\n    ";
-            tpl_youarehere();
-            echo "\n  </p></div>\n";
-        }
-        ?>
-
-        <!-- start div id bodyContent -->
-        <div id="bodyContent" class="dokuwiki">
-          <!-- start rendered wiki content -->
+      <!-- Content wrapper with TOC sidebar -->
+      <div class="d-flex">
+        <!-- Main content area -->
+        <div class="flex-grow-1 py-4">
           <?php
-          //flush the buffer for faster page rendering, heaviest content follows
-          if (function_exists("tpl_flush")) {
-              tpl_flush(); //exists since 2010-11-07 "Anteater"...
-          } else {
-              flush(); //...but I won't loose compatibility to 2009-12-25 "Lemming" right now.
+          //show messages (if there are any)
+          html_msgarea();
+          //show site notice
+          if (tpl_getConf("vector_sitenotice")){
+              //detect wiki page to load as content
+              if (!empty($transplugin) && //var comes from conf/boxes.php
+                  is_object($transplugin) &&
+                  tpl_getConf("vector_sitenotice_translate")){
+                  //translated site notice?
+                  $transplugin_langcur = $transplugin->hlp->getLangPart(cleanID(getId())); //current language part
+                  $transplugin_langs   = explode(" ", trim($transplugin->getConf("translations"))); //available languages
+                  if (empty($transplugin_langs) ||
+                      empty($transplugin_langcur) ||
+                      !is_array($transplugin_langs) ||
+                      !in_array($transplugin_langcur, $transplugin_langs)) {
+                      //current page is no translation or something is wrong, load default site notice
+                      $sitenotice_location = tpl_getConf("vector_sitenotice_location");
+                  } else {
+                      //load language specific site notice
+                      $sitenotice_location = tpl_getConf("vector_sitenotice_location")."_".$transplugin_langcur;
+                  }
+              }else{
+                  //default site notice, no translation
+                  $sitenotice_location = tpl_getConf("vector_sitenotice_location");
+              }
+
+              //we have to show a custom site notice
+              if (empty($conf["useacl"]) ||
+                  auth_quickaclcheck(cleanID($sitenotice_location)) >= AUTH_READ){ //current user got access?
+                  echo "\n  <div id=\"siteNotice\" class=\"noprint\">\n";
+                  //get the rendered content of the defined wiki article to use as
+                  //custom site notice.
+                  $interim = tpl_include_page($sitenotice_location, false);
+                  if ($interim === "" ||
+                      $interim === false){
+                      //show creation/edit link if the defined page got no content
+                      echo "[&#160;";
+                      tpl_pagelink($sitenotice_location, hsc($lang["vector_fillplaceholder"]." (".hsc($sitenotice_location).")"));
+                      echo "&#160;]<br />";
+                  }else{
+                      //show the rendered page content
+                      echo  "    <div class=\"dokuwiki\">\n" //dokuwiki CSS class needed cause we are showing rendered page content
+                           .$interim."\n    "
+                           ."</div>";
+                  }
+                  echo "\n  </div>\n";
+              }
           }
-          //decide which type of pagecontent we have to show
-          switch ($vector_action){
-              //"image details"
-              case "detail":
-                  include DOKU_TPLINC."inc_detail.php";
-                  break;
-              //"cite this article"
-              case "cite":
-                  include DOKU_TPLINC."inc_cite.php";
-                  break;
-              //show "normal" content
-              default:
-                  tpl_content(((tpl_getConf("vector_toc_position") === "article") ? true : false));
-                  break;
+          //show breadcrumps if enabled and position = top
+          if ($conf["breadcrumbs"] == true &&
+              $ACT !== "media" && //var comes from DokuWiki
+              (empty($conf["useacl"]) || //are there any users?
+               $loginname !== "" || //user is logged in?
+               !tpl_getConf("vector_closedwiki")) &&
+              tpl_getConf("vector_breadcrumbs_position") === "top"){
+              echo "\n  <div class=\"catlinks noprint\"><p>\n    ";
+              tpl_breadcrumbs();
+              echo "\n  </p></div>\n";
+          }
+          //show hierarchical breadcrumps if enabled and position = top
+          if ($conf["youarehere"] == true &&
+              $ACT !== "media" && //var comes from DokuWiki
+              (empty($conf["useacl"]) || //are there any users?
+               $loginname !== "" || //user is logged in?
+               !tpl_getConf("vector_closedwiki")) &&
+              tpl_getConf("vector_youarehere_position") === "top"){
+              echo "\n  <div class=\"catlinks noprint\"><p>\n    ";
+              tpl_youarehere();
+              echo "\n  </p></div>\n";
           }
           ?>
-          <!-- end rendered wiki content -->
-          <div class="clearer"></div>
-        </div>
-        <!-- end div id bodyContent -->
 
-        <?php
-        //show breadcrumps if enabled and position = bottom
-        if ($conf["breadcrumbs"] == true &&
-            $ACT !== "media" && //var comes from DokuWiki
-            (empty($conf["useacl"]) || //are there any users?
-             $loginname !== "" || //user is logged in?
-             !tpl_getConf("vector_closedwiki")) &&
-            tpl_getConf("vector_breadcrumbs_position") === "bottom"){
-            echo "\n  <div class=\"catlinks noprint\"><p>\n    ";
-            tpl_breadcrumbs();
-            echo "\n  </p></div>\n";
-        }
-        //show hierarchical breadcrumps if enabled and position = bottom
-        if ($conf["youarehere"] == true &&
-            $ACT !== "media" && //var comes from DokuWiki
-            (empty($conf["useacl"]) || //are there any users?
-             $loginname !== "" || //user is logged in?
-             !tpl_getConf("vector_closedwiki")) &&
-            tpl_getConf("vector_youarehere_position") === "bottom"){
-            echo "\n  <div class=\"catlinks noprint\"><p>\n    ";
-            tpl_youarehere();
-            echo "\n  </p></div>\n";
-        }
-        ?>
+          <!-- start div id bodyContent -->
+          <div id="bodyContent" class="dokuwiki">
+            <!-- start rendered wiki content -->
+            <?php
+            //flush the buffer for faster page rendering, heaviest content follows
+            if (function_exists("tpl_flush")) {
+                tpl_flush(); //exists since 2010-11-07 "Anteater"...
+            } else {
+                flush(); //...but I won't loose compatibility to 2009-12-25 "Lemming" right now.
+            }
+            //decide which type of pagecontent we have to show
+            switch ($vector_action){
+                //"image details"
+                case "detail":
+                    include DOKU_TPLINC."inc_detail.php";
+                    break;
+                //"cite this article"
+                case "cite":
+                    include DOKU_TPLINC."inc_cite.php";
+                    break;
+                //show "normal" content
+                default:
+                    tpl_content(((tpl_getConf("vector_toc_position") === "article") ? true : false));
+                    break;
+            }
+            ?>
+            <!-- end rendered wiki content -->
+            <div class="clearer"></div>
+          </div>
+          <!-- end div id bodyContent -->
+
+          <?php
+          //show breadcrumps if enabled and position = bottom
+          if ($conf["breadcrumbs"] == true &&
+              $ACT !== "media" && //var comes from DokuWiki
+              (empty($conf["useacl"]) || //are there any users?
+               $loginname !== "" || //user is logged in?
+               !tpl_getConf("vector_closedwiki")) &&
+              tpl_getConf("vector_breadcrumbs_position") === "bottom"){
+              echo "\n  <div class=\"catlinks noprint\"><p>\n    ";
+              tpl_breadcrumbs();
+              echo "\n  </p></div>\n";
+          }
+          //show hierarchical breadcrumps if enabled and position = bottom
+          if ($conf["youarehere"] == true &&
+              $ACT !== "media" && //var comes from DokuWiki
+              (empty($conf["useacl"]) || //are there any users?
+               $loginname !== "" || //user is logged in?
+               !tpl_getConf("vector_closedwiki")) &&
+              tpl_getConf("vector_youarehere_position") === "bottom"){
+              echo "\n  <div class=\"catlinks noprint\"><p>\n    ";
+              tpl_youarehere();
+              echo "\n  </p></div>\n";
+          }
+          ?>
+        </div>
+
+        <!-- TOC Sidebar -->
+        <?php if ($toc = tpl_toc(true)): ?>
+        <div class="d-none d-lg-block ms-4" style="width: 280px;">
+          <div class="sidebar-toc">
+            <?php echo $toc; ?>
+          </div>
+        </div>
+        <?php endif; ?>
       </div>
     </main>
   </div>
