@@ -2572,6 +2572,16 @@ main.main-content {
   background-color: var(--header-bg);
 }
 
+.sidebar-toc #dw__toc
+{
+  width: auto!important;
+} 
+
+.sidebar-toc #dw__toc strong
+{
+  display: none;
+} 
+
 .sidebar-toc #dw__toc .toc {
   list-style: none;
   /* Reduce padding */
