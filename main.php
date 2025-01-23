@@ -515,7 +515,6 @@ if (file_exists(DOKU_TPLINC."lang/".$conf["lang"]."/style.css")){
                     break;
               } ?>skin-vector bg-light min-vh-100">
 
-<div class="">
   <div class="main-wrapper"> <!-- Replace the row class with our custom wrapper -->
     <!-- Sidebar -->
     <div class="sidebar collapse" id="sidebar"> <!-- Removed 'collapse-horizontal' -->
@@ -922,7 +921,6 @@ if (file_exists(DOKU_TPLINC."lang/".$conf["lang"]."/style.css")){
       </div>
     </main>
   </div>
-</div>
 
 <!-- Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

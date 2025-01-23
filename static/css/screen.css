@@ -56,6 +56,8 @@
   --input-border: #ced4da;
   --dropdown-bg: #fff;
   --dropdown-hover: #e9ecef;
+  --main-bg: #f5f6f7; /* New grayish background for light mode */
+  --main-border: #e5e7eb;
 }
 
 [data-bs-theme="dark"] {
@@ -83,6 +85,8 @@
   --breadcrumb-bg: #333;
   --breadcrumb-text: #e4e4e4;
   --breadcrumb-border: #444;
+  --main-bg: #1a1f2b; /* Darker background with blue tint */
+  --main-border: #2a303c;
 }
 
 /* Add these new dark mode overrides */
@@ -443,6 +447,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: #ffffff; /* Ensure light theme background if not already set */
 }
 hr {
   border: 0 none;
@@ -2430,4 +2435,37 @@ main.main-content {
         height: 100%;
         overflow-y: auto;
     }
+}
+
+[data-bs-theme="dark"] body {
+    background-color: #121212; /* Example dark background color */
+}
+
+[data-bs-theme="dark"] .main-content {
+    border: 1px solid #333333; /* Example dark border color */
+    border: none;
+    background-image: none!important;
+
+}
+body {
+  background-image: none!important;
+}
+
+/* Main content styling */
+.main-content {
+  background-color: var(--main-bg);
+  border-color: var(--main-border);
+}
+
+/* Ensure the main tag respects the theme */
+main.main-content {
+  background-color: var(--main-bg);
+  border-color: var(--main-border);
+}
+
+/* Update dark mode overrides */
+[data-bs-theme="dark"] .main-content,
+[data-bs-theme="dark"] main.main-content {
+  background-color: var(--main-bg);
+  border-color: var(--main-border);
 }
