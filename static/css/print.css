@@ -184,6 +184,9 @@ body {
     padding: 0 !important;
     width: 100% !important;
 }
+#flashcards-container {
+  display: none;
+}
 
 /* Links handling */
 a {
@@ -202,6 +205,22 @@ a[href^="data:"]:after {
     content: "";
 }
 
+#flashcards{
+  display: none;
+}
+a.media {
+  display: inline-block; /* Ensures the link behaves like a block with content */
+  text-decoration: none; /* Removes any underlines or link styles */
+}
+
+a.media img {
+  display: block; /* Ensures the image inside the anchor is properly displayed */
+  max-width: 100%; /* Ensures the image fits within its container */
+  height: auto; /* Maintains aspect ratio */
+}
+a.media::after {
+  display: none;
+}
 /* Break URLs */
 a[href]:after {
     word-wrap: break-word;
