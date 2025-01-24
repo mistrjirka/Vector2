@@ -755,7 +755,7 @@ if (file_exists(DOKU_TPLINC."lang/".$conf["lang"]."/style.css")){
       <!-- Content wrapper with TOC sidebar -->
       <div class="d-flex">
         <!-- Main content area -->
-        <div class="flex-grow-1 py-4">
+        <div class="flex-grow-1 py-4 main-content-wrapper">
           <?php
           //show messages (if there are any)
           html_msgarea();
