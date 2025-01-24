@@ -56,7 +56,8 @@
   --input-border: #ced4da;
   --dropdown-bg: #fff;
   --dropdown-hover: #e9ecef;
-  --main-bg: #f5f6f7; /* New grayish background for light mode */
+  --main-bg: #f5f6f7;
+  /* New grayish background for light mode */
   --main-border: #e5e7eb;
 }
 
@@ -77,20 +78,27 @@
   --input-border: #555;
   --dropdown-bg: #333;
   --dropdown-hover: #444;
-  --content-bg: #2d2d2d; /* New variable for main content background */
-  --toc-bg: #333; /* New variable for TOC background */
-  --toc-text: #e4e4e4; /* New variable for TOC text */
-  --toc-border: #444; /* New variable for TOC borders */
-  --toc-hover: #444; /* New variable for TOC hover state */
+  --content-bg: #2d2d2d;
+  /* New variable for main content background */
+  --toc-bg: #333;
+  /* New variable for TOC background */
+  --toc-text: #e4e4e4;
+  /* New variable for TOC text */
+  --toc-border: #444;
+  /* New variable for TOC borders */
+  --toc-hover: #444;
+  /* New variable for TOC hover state */
   --breadcrumb-bg: #333;
   --breadcrumb-text: #e4e4e4;
   --breadcrumb-border: #444;
-  --main-bg: #2d2d2d; /* Darker background with blue tint */
+  --main-bg: #2d2d2d;
+  /* Darker background with blue tint */
   --main-border: #2a303c;
 }
 
 /* Add these new dark mode overrides */
 [data-bs-theme="dark"] {
+
   /* Main content area */
   .main-content {
     background-color: var(--content-bg);
@@ -153,17 +161,34 @@
   }
 
   /* Level indentation for TOC */
-  #dw__toc ul.toc li.level2 { padding-left: 1rem; }
-  #dw__toc ul.toc li.level3 { padding-left: 2rem; }
-  #dw__toc ul.toc li.level4 { padding-left: 3rem; }
-  #dw__toc ul.toc li.level5 { padding-left: 4rem; }
+  #dw__toc ul.toc li.level2 {
+    padding-left: 1rem;
+  }
+
+  #dw__toc ul.toc li.level3 {
+    padding-left: 2rem;
+  }
+
+  #dw__toc ul.toc li.level4 {
+    padding-left: 3rem;
+  }
+
+  #dw__toc ul.toc li.level5 {
+    padding-left: 4rem;
+  }
 
   /* Fix text colors in various elements */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     color: var(--text-color);
   }
 
-  a, a:visited {
+  a,
+  a:visited {
     color: var(--link-color);
   }
 
@@ -189,14 +214,18 @@
   }
 
   /* Code blocks and inline code */
-  pre, code, .code {
+  pre,
+  code,
+  .code {
     background-color: var(--code-bg) !important;
     color: var(--text-color) !important;
     border-color: var(--border-color) !important;
   }
 
   /* Form elements */
-  input, textarea, select {
+  input,
+  textarea,
+  select {
     background-color: var(--input-bg);
     border-color: var(--input-border);
     color: var(--text-color);
@@ -226,56 +255,74 @@
   /* Basic text and backgrounds */
   color: var(--text-color);
   background-color: var(--bg-color);
-  
+
   /* Links */
-  a, a:visited { color: var(--link-color); }
-  a:hover { color: var(--link-hover-color); }
-  
+  a,
+  a:visited {
+    color: var(--link-color);
+  }
+
+  a:hover {
+    color: var(--link-hover-color);
+  }
+
   /* Form elements */
-  input, textarea, select {
+  input,
+  textarea,
+  select {
     background-color: var(--input-bg) !important;
     border-color: var(--input-border) !important;
     color: var(--text-color) !important;
   }
-  
+
   /* Tables */
   table.inline th {
     background-color: var(--card-bg);
     border-color: var(--border-color);
   }
-  
+
   table.inline td {
     border-color: var(--border-color);
   }
-  
+
   /* Code blocks */
-  pre, code, .code {
+  pre,
+  code,
+  .code {
     background-color: var(--code-bg) !important;
     color: var(--text-color) !important;
     border-color: var(--border-color) !important;
   }
-  
+
   /* Navigation and UI elements */
   .navbar {
     background-color: var(--header-bg) !important;
     border-color: var(--border-color) !important;
   }
-  
+
   .sidebar {
     background-color: var(--sidebar-bg) !important;
     border-color: var(--border-color) !important;
   }
-  
+
   .card {
     background-color: var(--card-bg) !important;
     border-color: var(--border-color) !important;
   }
-  
+
   /* Override Bootstrap classes */
-  .bg-light { background-color: var(--card-bg) !important; }
-  .bg-white { background-color: var(--header-bg) !important; }
-  .border-bottom { border-color: var(--border-color) !important; }
-  
+  .bg-light {
+    background-color: var(--card-bg) !important;
+  }
+
+  .bg-white {
+    background-color: var(--header-bg) !important;
+  }
+
+  .border-bottom {
+    border-color: var(--border-color) !important;
+  }
+
   /* Buttons */
   .btn-outline-primary,
   .btn-outline-secondary,
@@ -283,51 +330,51 @@
     color: var(--link-color);
     border-color: var(--border-color);
   }
-  
+
   .btn-outline-primary:hover,
   .btn-outline-secondary:hover,
   .btn-outline-info:hover {
     background-color: var(--link-color);
     color: var(--bg-color);
   }
-  
+
   /* Dropdowns */
   .dropdown-menu {
     background-color: var(--dropdown-bg);
     border-color: var(--border-color);
   }
-  
+
   .dropdown-item {
     color: var(--text-color);
   }
-  
+
   .dropdown-item:hover {
     background-color: var(--dropdown-hover);
     color: var(--link-hover-color);
   }
-  
+
   /* Editor */
   .dokuwiki textarea.edit {
     background-color: var(--input-bg) !important;
     color: var(--text-color) !important;
   }
-  
+
   /* Wiki content specific */
   #dw__toc {
     background-color: var(--card-bg) !important;
     border-color: var(--border-color) !important;
   }
-  
+
   .dokuwiki div.page {
     background-color: var(--bg-color);
     color: var(--text-color);
   }
-  
+
   /* Admin interface */
   .admin_tasks {
     background-color: var(--card-bg);
   }
-  
+
   .admin_tasks li {
     border-color: var(--border-color) !important;
   }
@@ -404,6 +451,9 @@
   #p-tb a {
     color: var(--link-color);
   }
+  #p-navigation .body{
+    padding-left: 1rem;
+  }
 
   #p-navigation a:hover,
   #p-coll-print-export a:hover,
@@ -439,6 +489,7 @@ html {
   overflow-x: auto;
   overflow-y: auto;
 }
+
 body {
   font: normal 100%/1.4 sans-serif;
   font-family: var(--bs-body-font-family);
@@ -447,50 +498,61 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #ffffff; /* Ensure light theme background if not already set */
+  background-color: #ffffff;
+  /* Ensure light theme background if not already set */
 }
+
 hr {
   border: 0 none;
   text-align: center;
   width: 100%;
   clear: both;
 }
+
 caption,
 legend {
   color: __text_neu__;
   font-family: sans-serif;
   background-color: inherit;
 }
+
 pre,
 code,
 samp,
 kbd {
-  font-family: monospace,sans-serif;
+  font-family: monospace, sans-serif;
 }
+
 pre {
   overflow: auto;
 }
+
 img {
   border-width: 0;
   background-color: transparent;
 }
+
 blockquote {
   padding: 0 1.25em;
   border: solid __border__;
   border-width: 0 0 0 .25em;
 }
+
 q:before,
 q:after {
   content: '';
 }
+
 sub,
 sup {
   font-size: .8em;
   line-height: 1;
 }
+
 sub {
   vertical-align: sub;
 }
+
 sup {
   vertical-align: super;
 }
@@ -500,10 +562,12 @@ form {
   display: inline;
   padding: 0;
 }
+
 label {
   vertical-align: middle;
   cursor: pointer;
 }
+
 input,
 textarea,
 button,
@@ -517,31 +581,37 @@ option {
   margin: 0;
   vertical-align: middle;
 }
+
 input[type=text],
 input[type=password],
 textarea {
   padding: .1em;
 }
+
 input[type=radio],
 input[type=checkbox],
 input.check {
   padding: 0;
 }
+
 input[type=submit],
 input.button,
 button {
   cursor: pointer;
 }
+
 input[disabled],
 button[disabled],
 input[readonly],
 button[readonly] {
   cursor: auto;
 }
+
 optgroup {
   font-style: italic;
   font-weight: bold;
 }
+
 option {
   font-style: normal;
   font-weight: normal;
@@ -554,11 +624,13 @@ table {
   border-spacing: 0;
   border: 1px solid __border__;
 }
+
 caption {
   caption-side: top;
   text-align: left;
   margin: 0 0 .3em;
 }
+
 th,
 td {
   padding: .3em .5em;
@@ -567,6 +639,7 @@ td {
   border: 1px solid __border__;
   text-align: left;
 }
+
 th {
   font-weight: bold;
   background-color: __background_alt__;
@@ -582,9 +655,11 @@ table,
 blockquote,
 fieldset,
 address {
-  margin: 0 0 1.4em 0; /* bottom margin = line-height */
+  margin: 0 0 1.4em 0;
+  /* bottom margin = line-height */
   padding: 0;
 }
+
 div {
   margin: 0;
   padding: 0;
@@ -595,16 +670,19 @@ ul,
 ol {
   padding: 0 0 0 1.5em;
 }
+
 li,
 dd {
   padding: 0;
   margin: 0 0 0 1.5em;
 }
+
 dt {
   font-weight: bold;
   margin: 0;
   padding: 0;
 }
+
 li ul,
 li ol,
 li dl,
@@ -614,15 +692,34 @@ dl dl {
   margin-bottom: 0;
   padding: 0;
 }
+
 li li {
   font-size: 100%;
 }
-ul             { list-style: square outside; }
-ol             { list-style: decimal outside; }
-ol ol          { list-style-type: lower-alpha; }
-ol ol ol       { list-style-type: upper-roman; }
-ol ol ol ol    { list-style-type: upper-alpha; }
-ol ol ol ol ol { list-style-type: lower-roman; }
+
+ul {
+  list-style: square outside;
+}
+
+ol {
+  list-style: decimal outside;
+}
+
+ol ol {
+  list-style-type: lower-alpha;
+}
+
+ol ol ol {
+  list-style-type: upper-roman;
+}
+
+ol ol ol ol {
+  list-style-type: upper-alpha;
+}
+
+ol ol ol ol ol {
+  list-style-type: lower-roman;
+}
 
 /* general classes */
 div.clearer {
@@ -630,6 +727,7 @@ div.clearer {
   font-size: 1px;
   visibility: hidden;
 }
+
 .a11y {
   position: absolute;
   left: -9000px;
@@ -644,10 +742,19 @@ div.clearer {
 /* --------------- content styling --------------- */
 
 /* embedded images (styles are already partly set in DokuWiki's lib/styles/all.css) */
-.dokuwiki img.media       { }
-.dokuwiki img.medialeft   { margin: .5em 1.5em .5em 0; }
-.dokuwiki img.mediaright  { margin: .5em 0 .5em 1.5em; }
-.dokuwiki img.mediacenter { margin: .5em auto; }
+.dokuwiki img.media {}
+
+.dokuwiki img.medialeft {
+  margin: .5em 1.5em .5em 0;
+}
+
+.dokuwiki img.mediaright {
+  margin: .5em 0 .5em 1.5em;
+}
+
+.dokuwiki img.mediacenter {
+  margin: .5em auto;
+}
 
 div.dokuwiki p,
 div.dokuwiki blockquote,
@@ -669,11 +776,13 @@ div.dokuwiki textarea.edit {
   width: 100%;
   line-height: 17px;
 }
+
 div.dokuwiki legend {
   font-family: sans-serif;
   font-weight: normal;
   background-color: transparent;
-  text-align: left; /* needed for webkit browsers */
+  text-align: left;
+  /* needed for webkit browsers */
 }
 
 /* nice alphatransparency background except for IE <7 */
@@ -722,38 +831,50 @@ div.dokuwiki input.edit[disabled],
 div.dokuwiki input.edit[readonly],
 div.dokuwiki input.button[disabled],
 div.dokuwiki select.edit[disabled] {
-  background-color: __background_neu__!important;
-  color: __text_neu__!important;
+  background-color: __background_neu__ !important;
+  color: __text_neu__ !important;
   font-weight: normal;
 }
 
 /* edit form */
 div.dokuwiki div.toolbar,
-div.dokuwiki div#wiki__editbar, /* old, until 2012-01-25 */
-div.dokuwiki div.editBar {      /* new, since 2012-09-10 */
+div.dokuwiki div#wiki__editbar,
+/* old, until 2012-01-25 */
+div.dokuwiki div.editBar {
+  /* new, since 2012-09-10 */
   margin: 2px 0;
   text-align: left;
 }
+
 div.dokuwiki div#size__ctl {
   float: right;
   width: 60px;
   height: 2.7em;
 }
+
 div.dokuwiki #size__ctl img {
   cursor: pointer;
 }
-div.dokuwiki div#wiki__editbar div.editButtons, /* old, until 2012-01-25 */
-div.dokuwiki div.editBar div.editButtons {      /* new, since 2012-09-10 */
+
+div.dokuwiki div#wiki__editbar div.editButtons,
+/* old, until 2012-01-25 */
+div.dokuwiki div.editBar div.editButtons {
+  /* new, since 2012-09-10 */
   float: left;
   padding: 0 1.0em 0.7em 0;
 }
-div.dokuwiki div#wiki__editbar div.summary, /* old, until 2012-01-25 */
-div.dokuwiki div.editBar div.summary {      /* new, since 2012-09-10 */
+
+div.dokuwiki div#wiki__editbar div.summary,
+/* old, until 2012-01-25 */
+div.dokuwiki div.editBar div.summary {
+  /* new, since 2012-09-10 */
   float: left;
 }
+
 div.dokuwiki .nowrap {
   white-space: nowrap;
 }
+
 div.dokuwiki div#draft__status {
   float: right;
   color: __text_alt__;
@@ -785,6 +906,7 @@ div.dokuwiki button.button {
   font-weight: normal;
   line-height: 1.333em;
 }
+
 div.dokuwiki button.toolbutton {
   height: 20px;
   width: 24px;
@@ -792,6 +914,7 @@ div.dokuwiki button.toolbutton {
   line-height: 16px;
   text-align: center;
 }
+
 /* nice alphatransparency background except for IE <7 */
 html>body div.dokuwiki input.button,
 html>body div.dokuwiki button.button {
@@ -809,6 +932,7 @@ div.dokuwiki a:visited {
   color: var(--link-color);
   text-decoration: none;
 }
+
 div.dokuwiki a:hover,
 div.dokuwiki a:active {
   color: var(--link-hover-color);
@@ -823,6 +947,7 @@ a.wikilink2:hover {
   color: __missing__ !important;
   text-decoration: none;
 }
+
 a.wikilink2:hover {
   border-bottom: 0 none !important;
   text-decoration: none !important;
@@ -844,6 +969,7 @@ div#bodyContent a.urlextern {
   background: url(static/3rd/vector/external-link-ltr-icon.png) center right no-repeat;
   padding: 0 13px 0 0;
 }
+
 div.dokuwiki a.urlextern:visited {
   color: purple;
 }
@@ -865,6 +991,7 @@ div.dokuwiki a.interwiki {
   background-position: center right;
   padding: 0 17px 0 0;
 }
+
 div.dokuwiki a.interwiki:visited {
   color: purple;
 }
@@ -879,8 +1006,10 @@ h6 {
   font-family: sans-serif;
   background-color: inherit;
   padding: 0;
-  clear: left; /* ideally 'both', but problems with toc */
+  clear: left;
+  /* ideally 'both', but problems with toc */
 }
+
 div#content .dokuwiki h1,
 div#content .dokuwiki h2,
 div#content .dokuwiki h3,
@@ -893,6 +1022,7 @@ div#content .dokuwiki h6 {
   padding-bottom: 0.17em;
   padding-top: 0.5em;
 }
+
 div#content .dokuwiki h1 a,
 div#content .dokuwiki h2 a,
 div#content .dokuwiki h3 a,
@@ -901,6 +1031,7 @@ div#content .dokuwiki h5 a,
 div#content .dokuwiki h6 a {
   color: __text__;
 }
+
 div#content .dokuwiki h1 a:hover,
 div#content .dokuwiki h2 a:hover,
 div#content .dokuwiki h3 a:hover,
@@ -909,14 +1040,17 @@ div#content .dokuwiki h5 a:hover,
 div#content .dokuwiki h6 a:hover {
   text-decoration: none;
 }
+
 div#content .dokuwiki h1 {
   font-size: 160%;
 }
+
 div#content .dokuwiki h1,
 div#content .dokuwiki h2 {
   margin-bottom: 0.6em;
   font-weight: normal;
 }
+
 div#content .dokuwiki h3,
 div#content .dokuwiki h4,
 div#content .dokuwiki h5,
@@ -925,15 +1059,19 @@ div#content .dokuwiki h6 {
   border-bottom: none;
   margin-bottom: 0.3em;
 }
+
 div#content .dokuwiki h3 {
   font-size: 132%;
 }
+
 div#content .dokuwiki h4 {
   font-size: 116%;
 }
+
 div#content .dokuwiki h5 {
   font-size: 100%;
 }
+
 div#content .dokuwiki h6 {
   font-size: 80%;
 }
@@ -968,18 +1106,31 @@ div.dokuwiki ol {
 
 div.dokuwiki li ul,
 div.dokuwiki li ol {
-  margin: 0 0 0 1.5em; /* no bottom gap in between and smaller left margin for nested lists */
+  margin: 0 0 0 1.5em;
+  /* no bottom gap in between and smaller left margin for nested lists */
 }
 
 div.dokuwiki .li {
-  color: __text__;  /* the list items overriding the ul/ol definition */
+  color: __text__;
+  /* the list items overriding the ul/ol definition */
   font-weight: normal;
 }
 
-div.dokuwiki ol { list-style-type: decimal; }
-div.dokuwiki ol ol { list-style-type: upper-roman; }
-div.dokuwiki ol ol ol { list-style-type: lower-alpha; }
-div.dokuwiki ol ol ol ol { list-style-type: lower-greek; }
+div.dokuwiki ol {
+  list-style-type: decimal;
+}
+
+div.dokuwiki ol ol {
+  list-style-type: upper-roman;
+}
+
+div.dokuwiki ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+div.dokuwiki ol ol ol ol {
+  list-style-type: lower-greek;
+}
 
 div.dokuwiki li.open {
   list-style-image: url(static/3rd/dokuwiki/images/open.gif);
@@ -1013,10 +1164,12 @@ div#content .dokuwiki blockquote {
   padding: 0 .5em;
   margin-left: 1em;
 }
+
 .dokuwiki dl.code dd,
 .dokuwiki dl.file dd {
   margin: 0;
 }
+
 div#content .dokuwiki code,
 div#content .dokuwiki pre,
 div#content .dokuwiki pre.code,
@@ -1031,9 +1184,12 @@ div#content .dokuwiki tt {
   direction: ltr;
   text-align: left;
 }
-div#content .dokuwiki em.u code { /* fix if background-color hides underlining */
+
+div#content .dokuwiki em.u code {
+  /* fix if background-color hides underlining */
   text-decoration: underline;
 }
+
 div#content .dokuwiki pre,
 div#content .dokuwiki pre.code,
 div#content .dokuwiki pre.file {
@@ -1041,10 +1197,12 @@ div#content .dokuwiki pre.file {
   padding: 0.5em;
   border: 1px dashed __border__;
 }
+
 div#content .dokuwiki dl.file,
 div#content .dokuwiki dl.file dd {
   margin-left: 0;
 }
+
 div#content .dokuwiki dl.file dt,
 div#content .dokuwiki dl.code dt {
   background-color: #f9f9f9;
@@ -1056,6 +1214,7 @@ div#content .dokuwiki dl.code dt {
   margin-left: 2em;
   padding: 0.1em 1em;
 }
+
 div#content .dokuwiki dl.file dt a,
 div#content .dokuwiki dl.code dt a {
   color: __text__;
@@ -1079,25 +1238,30 @@ th,
 td {
   border: 0;
 }
+
 td[align="right"],
 th[align="right"] {
   text-align: right;
 }
+
 .dokuwiki table.inline {
   background-color: var(--card-bg);
   width: auto;
   border-collapse: collapse;
   border-spacing: 0;
 }
+
 .dokuwiki table.inline th,
 .dokuwiki table.inline td {
   border: 1px solid __border__;
   padding: 0.3rem;
 }
+
 .dokuwiki table.inline th {
   color: inherit;
   background-color: __background_alt__;
 }
+
 .dokuwiki table.inline tr:hover td,
 .dokuwiki table.inline tr:hover th,
 .dokuwiki table.inline th:hover {
@@ -1110,6 +1274,7 @@ th[align="right"] {
   float: right;
   margin-top: 1rem;
 }
+
 div#content .dokuwiki div.secedit input.button {
   border: 0 none;
   text-transform: lowercase;
@@ -1132,9 +1297,11 @@ div.dokuwiki div.fn {
 
 /* insitu-footnotes */
 div.insitu-footnote {
-  font-size: 0.938em; /* 12px */
+  font-size: 0.938em;
+  /* 12px */
   padding: 4px 7px 4px 10px;
 }
+
 div.insitu-footnote code,
 div.insitu-footnote pre {
   font-size: 90%;
@@ -1185,11 +1352,13 @@ div.dokuwiki .gallery td {
 div.dokuwiki form.bureaucracy__plugin fieldset {
   text-align: center;
 }
+
 div.dokuwiki form.bureaucracy__plugin label {
   width: 95% !important;
   margin-left: auto;
   margin-right: auto;
 }
+
 div.dokuwiki form.bureaucracy__plugin label span,
 div.dokuwiki form.bureaucracy__plugin input.edit,
 div.dokuwiki form.bureaucracy__plugin textarea.edit,
@@ -1207,9 +1376,11 @@ div.dokuwiki form.bureaucracy__plugin fieldset textarea.edit {
 div#panel {
   line-height: 15px;
 }
+
 div#panel .dokuwiki {
   font-size: 0.75em;
 }
+
 div#panel a.wikilink1,
 div#panel a.wikilink2,
 div#panel a.urlextern {
@@ -1217,37 +1388,46 @@ div#panel a.urlextern {
   background: transparent none;
   color: __existing__;
 }
+
 div#panel .body {
   margin-right: 0.45em !important;
   padding-top: 0.25em !important;
 }
+
 div#panel .body .dokuwiki p {
   margin: 0;
 }
+
 div#panel .body .dokuwiki ul li {
   font-size: 1em !important;
   padding: 0.25em 0 !important;
 }
+
 div#panel .body .dokuwiki li ul {
   font-size: 95% !important;
   margin: 0.25em 0 0 1em !important;
 }
+
 div#panel .body .dokuwiki ol {
   margin: 0 0 0 1.65em;
 }
+
 /* QR Code */
 div#panel #t-qrcode img {
   margin: 0.5em auto 0.3em auto;
   display: block;
 }
+
 /* translation plugin by Anreas Gohr */
 div#panel .body .dokuwiki .plugin_translation span {
   display: none;
 }
+
 div#panel .body .dokuwiki .plugin_translation {
   padding-right: 0 !important;
   text-align: left;
 }
+
 div#panel .body .dokuwiki .plugin_translation,
 div#panel .body .dokuwiki .plugin_translation ul,
 div#panel .body .dokuwiki .plugin_translation li {
@@ -1257,6 +1437,7 @@ div#panel .body .dokuwiki .plugin_translation li {
   line-height: 1.125em;
   font-size: 100%;
 }
+
 div#panel .body .dokuwiki .plugin_translation ul li a.wikilink1:link,
 div#panel .body .dokuwiki .plugin_translation ul li a.wikilink1:hover,
 div#panel .body .dokuwiki .plugin_translation ul li a.wikilink1:active,
@@ -1269,31 +1450,39 @@ div#panel .body .dokuwiki .plugin_translation ul li a.wikilink2:visited {
   margin: 0;
   padding: 0;
 }
+
 div#panel .body .dokuwiki .plugin_translation ul li a.wikilink1:before,
 div#panel .body .dokuwiki .plugin_translation ul li a.wikilink2:before {
   content: attr(title) " (";
 }
+
 div#panel .body .dokuwiki .plugin_translation ul li a.wikilink1:after,
 div#panel .body .dokuwiki .plugin_translation ul li a.wikilink2:after {
   content: ") ";
 }
+
 div#panel .body .dokuwiki .plugin_translation ul li a.wikilink1 {
   color: __existing__ !important;
 }
+
 div#panel .body .dokuwiki .plugin_translation ul li a.wikilink2 {
   color: __missing__ !important;
 }
+
 div#panel .body .dokuwiki .plugin_translation ul li a.wikilink1:hover {
   text-decoration: underline;
 }
+
 div#panel .body .dokuwiki .plugin_translation ul li a.wikilink2:hover {
   text-decoration: underline !important;
 }
+
 div#panel .body .dokuwiki .plugin_translation select {
   width: 90%;
   margin: auto !important;
   text-align: left;
 }
+
 div#panel .body .dokuwiki .plugin_translation option,
 div#panel .body .dokuwiki .plugin_translation option.wikilink1,
 div#panel .body .dokuwiki .plugin_translation option.wikilink2 {
@@ -1303,56 +1492,59 @@ div#panel .body .dokuwiki .plugin_translation option.wikilink2 {
 
 /* Admin list wrapper adjustments */
 .admin-list-wrapper {
-    height: 400px; /* Set a fixed height */
-    overflow-y: auto; /* Enable vertical scrolling */
+  height: 400px;
+  /* Set a fixed height */
+  overflow-y: auto;
+  /* Enable vertical scrolling */
 }
 
 /* Sidebar navigation improvements */
 .sidebar .dokuwiki ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .sidebar .dokuwiki ul li {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .sidebar .dokuwiki ul li a {
-    display: block;
-    padding: 0.5rem 1rem;
-    color: #333;
-    text-decoration: none;
-    border-radius: 0.25rem;
-    transition: all 0.2s;
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  transition: all 0.2s;
 }
 
 .sidebar .dokuwiki ul li a:hover {
-    background: #e9ecef;
-    text-decoration: none;
+  background: #e9ecef;
+  text-decoration: none;
 }
 
-.sidebar .dokuwiki ul li.active > a {
-    background: #0d6efd;
-    color: white;
+.sidebar .dokuwiki ul li.active>a {
+  background: #0d6efd;
+  color: white;
 }
 
 /* Logo styling */
 .sidebar .logo-wrapper {
-    padding: 1rem;
-    margin-bottom: 1rem;
-    text-align: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .sidebar .logo-wrapper a {
-    display: block;
-    width: 100%;
-    height: 80px; /* Adjust height as needed */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 80px;
+  /* Adjust height as needed */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  text-decoration: none;
 }
 
 /* Admin menu improvements */
@@ -1368,7 +1560,7 @@ div#panel .body .dokuwiki .plugin_translation option.wikilink2 {
 
 .admin-list-wrapper ul.admin_tasks li {
   padding: 0.5rem 1rem;
-  border-bottom: 1px solid rgba(0,0,0,.1);
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
 
 .admin-list-wrapper ul.admin_tasks li:last-child {
@@ -1397,6 +1589,7 @@ div#simpleSearch input#qsearch__in {
   width: 14em;
   background-color: transparent;
 }
+
 /* Ajax quicksearch */
 #qsearch__out {
   top: 72px;
@@ -1412,24 +1605,30 @@ div#simpleSearch input#qsearch__in {
   padding: 0;
   position: static;
 }
+
 #qsearch__out ul {
   padding: 0;
   margin: 0;
   list-style: none;
 }
+
 #qsearch__out li {
   color: windowtext;
   margin: 0;
   width: 100%;
   padding: 1px;
 }
+
 #qsearch__out li a {
-  width: 97%; /* leave some space for browser rounding errors */
+  width: 97%;
+  /* leave some space for browser rounding errors */
   display: block;
 }
+
 #qsearch__out li:hover {
   background-color: #bbb;
 }
+
 #qsearch__out li a,
 #qsearch__out li a:link,
 #qsearch__out li a:visited,
@@ -1447,12 +1646,14 @@ div#footer a.urlextern {
   background: transparent none;
   color: __existing__;
 }
+
 /* default copyright notice layout */
 div#footer #footer-info li#footer-info-copyright .license {
   font-size: 100%;
   text-align: left;
   padding: 0;
 }
+
 div#footer #footer-info li#footer-info-copyright .license a.urlextern {
   margin-left: 0.4em;
 }
@@ -1592,7 +1793,7 @@ div.dokuwiki #dw__toc h3 strong {
   margin-top: 0.2em;
 }
 
-div.dokuwiki #dw__toc h3 ~ div {
+div.dokuwiki #dw__toc h3~div {
   border: 1px solid __border__;
   padding-left: 10px;
 }
@@ -1609,15 +1810,30 @@ div.dokuwiki #dw__toc ul.toc {
 div.dokuwiki #dw__toc ul.toc li {
   list-style-image: none;
   list-style-type: none;
-  background: none !important; /* Remove the dot background image */
+  background: none !important;
+  /* Remove the dot background image */
   padding-left: 0 !important;
 }
 
-div.dokuwiki #dw__toc ul.toc li.level1 { padding-left: 0 !important; }
-div.dokuwiki #dw__toc ul.toc li.level2 { padding-left: 1rem !important; }
-div.dokuwiki #dw__toc ul.toc li.level3 { padding-left: 2rem !important; }
-div.dokuwiki #dw__toc ul.toc li.level4 { padding-left: 3rem !important; }
-div.dokuwiki #dw__toc ul.toc li.level5 { padding-left: 4rem !important; }
+div.dokuwiki #dw__toc ul.toc li.level1 {
+  padding-left: 0 !important;
+}
+
+div.dokuwiki #dw__toc ul.toc li.level2 {
+  padding-left: 1rem !important;
+}
+
+div.dokuwiki #dw__toc ul.toc li.level3 {
+  padding-left: 2rem !important;
+}
+
+div.dokuwiki #dw__toc ul.toc li.level4 {
+  padding-left: 3rem !important;
+}
+
+div.dokuwiki #dw__toc ul.toc li.level5 {
+  padding-left: 4rem !important;
+}
 
 
 /* --------------- generic content classes --------------- */
@@ -1635,19 +1851,23 @@ div.notify {
 div#content .dokuwiki div.preview {
   margin-left: 0;
 }
+
 /* "remeber me" checkbox, login */
 div.dokuwiki form#dw__login label.simple {
   text-align: center;
   padding-bottom: 0.4em;
 }
+
 /* main menu */
 .dokuwiki ul.admin_tasks li {
   list-style-type: none;
   list-style-image: none;
 }
+
 .dokuwiki ul.admin_tasks li a {
   font-weight: bold;
 }
+
 /* acl tree */
 #acl__tree li {
   list-style-image: none;
@@ -1659,14 +1879,17 @@ div.dokuwiki form#dw__login label.simple {
 html.popup {
   background-color: #fff;
 }
+
 html.popup body {
   font: 13px sans-serif;
   background-image: none;
   background-color: #fff;
 }
+
 html.popup #media__manager {
   min-height: 465px;
 }
+
 html.popup #media__manager h1,
 html.popup #media__popup h1,
 html.popup #media__popup h2 {
@@ -1674,30 +1897,36 @@ html.popup #media__popup h2 {
   line-height: 1em !important;
   font-weight: bold !important;
 }
+
 html.popup #media__opts {
   padding-left: 1em;
   margin-bottom: 0.5em;
 }
+
 html.popup #media__opts input {
   float: left;
   display: block;
   margin-top: 4px;
   position: absolute;
 }
+
 *+html.popup #media__opts input,
 * html.popup #media__opts input {
   position: static;
 }
+
 html.popup #media__opts label {
   display: block;
   float: left;
   margin-left: 20px;
   margin-bottom: 4px;
 }
+
 *+html.popup #media__opts label,
 * html.popup #media__opts label {
   margin-left: 10px;
 }
+
 html.popup #media__opts br {
   clear: left;
 }
@@ -1711,38 +1940,47 @@ html.popup #media__opts br {
   font-weight: normal !important;
   padding: 3px 10px !important;
 }
+
 #mediamanager__page div.namespaces h2 {
   margin-left: 0.3em;
   margin-bottom: 0;
   border-bottom-color: __background_alt__;
 }
+
 #mediamanager__page div.namespaces div.panelHeader {
   padding-top: 11px;
 }
+
 #mediamanager__page h3,
 #mediamanager__page ul.tabs li {
   margin: 0 !important;
   padding: 0 !important;
 }
+
 #mediamanager__page .panelHeader ul {
   list-style-image: none !important;
 }
+
 #mediamanager__page .panelHeader ul .ui-buttonset {
   font-size: 12px;
 }
+
 #mediamanager__page .panelHeader ul li.ui-buttonset {
   background-position: 3px 0;
   padding-bottom: 3px;
 }
+
 #mediamanager__page .panelHeader div.no input.button {
   padding: 1px;
   line-height: 1em;
 }
+
 #mediamanager__page {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
 }
+
 #mediamanager__page .panel {
   background: var(--bs-light);
   padding: 1rem;
@@ -1754,20 +1992,25 @@ html.popup #media__opts br {
 #link__wiz {
   text-align: center;
 }
+
 #link__wiz_result div.even {
   background-color: #f5f5f5;
 }
 
 
 /* --------------- search result formating --------------- */
-div.dokuwiki div.search_result,  /* old, until 2012-01-25 */
-div.dokuwiki dl.search_results { /* new, since 2012-09-10 */
+div.dokuwiki div.search_result,
+/* old, until 2012-01-25 */
+div.dokuwiki dl.search_results {
+  /* new, since 2012-09-10 */
   margin-bottom: 6px;
   padding: 0 10px 0 30px;
 }
 
-div.dokuwiki .search_snippet,       /* old, until 2012-01-25 */
-div.dokuwiki dl.search_results dd { /* new, since 2012-09-10 */
+div.dokuwiki .search_snippet,
+/* old, until 2012-01-25 */
+div.dokuwiki dl.search_results dd {
+  /* new, since 2012-09-10 */
   font-size: 12px;
   margin-left: 20px;
 }
@@ -1780,6 +2023,7 @@ div.dokuwiki .search_hit {
   color: __text__;
   background-color: __highlight__;
 }
+
 div.dokuwiki strong.search_hit {
   font-weight: normal;
 }
@@ -1789,6 +2033,7 @@ div.dokuwiki div.search_quickresult {
   padding: 0 10px 10px 0;
   border-bottom: 1px dashed __border__;
 }
+
 div.dokuwiki div.search_quickresult h3 {
   margin: 0 0 1.0em 0;
   font-size: 1em;
@@ -1823,6 +2068,7 @@ div.dokuwiki .section_highlight {
   line-height: 1.2;
   padding: 0 .2em;
 }
+
 .JSpopup ul,
 .JSpopup ol {
   padding-left: 0;
@@ -1834,9 +2080,11 @@ div.dokuwiki .section_highlight {
   font-size: 12px;
   line-height: 17px;
 }
+
 .dokuwiki table.diff th {
   font-size: 12px;
 }
+
 .dokuwiki table.diff td.diff-addedline,
 .dokuwiki table.diff td.diff-deletedline,
 .dokuwiki table.diff td.diff-context {
@@ -1846,503 +2094,524 @@ div.dokuwiki .section_highlight {
 
 /* Base overrides for Bootstrap compatibility */
 body {
-    font-family: var(--bs-body-font-family);
-    font-size: var(--bs-body-font-size);
-    line-height: var(--bs-body-line-height);
+  font-family: var(--bs-body-font-family);
+  font-size: var(--bs-body-font-size);
+  line-height: var(--bs-body-line-height);
 }
 
 /* DokuWiki specific styles */
 .dokuwiki .secedit {
-    float: right;
-    margin-top: 1rem;
+  float: right;
+  margin-top: 1rem;
 }
 
 .dokuwiki div.table {
-    overflow-x: auto;
+  overflow-x: auto;
 }
 
 .dokuwiki table.inline {
-    width: auto;
-    border-collapse: collapse;
-    border-spacing: 0;
+  width: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 .dokuwiki table.inline th,
 .dokuwiki table.inline td {
-    padding: 0.3rem;
+  padding: 0.3rem;
 }
 
 /* Search results */
 .dokuwiki .search_results {
-    margin-bottom: 1rem;
-    padding: 1rem;
-    background: var(--bs-light);
-    border-radius: 0.25rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: var(--bs-light);
+  border-radius: 0.25rem;
 }
 
 /* TOC */
 #dw__toc {
-    background: var(--bs-light);
-    padding: 1rem;
-    border-radius: 0.25rem;
-    margin-bottom: 1rem;
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
 }
 
 #dw__toc h3 {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 /* Sidebar */
 .sidebar {
-    position: static;
-    min-height: 100vh;
-    background: var(--sidebar-bg);
-    padding: 1rem 0;
-    border-right: 1px solid var(--border-color);
+  position: static;
+  min-height: 100vh;
+  background: var(--sidebar-bg);
+  padding: 1rem 0;
+  border-right: 1px solid var(--border-color);
 }
 
 .sidebar .portal {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .sidebar h5 {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    margin: 0;
-    background: #e9ecef;
-    border-radius: 0.25rem;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  background: #e9ecef;
+  border-radius: 0.25rem;
 }
 
 .sidebar .body {
-    padding: 0.5rem 0;
+  padding: 0.5rem 0;
 }
 
 /* Sidebar navigation improvements */
 .sidebar .dokuwiki ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .sidebar .dokuwiki ul li {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .sidebar .dokuwiki ul li a {
-    display: block;
-    padding: 0.5rem 1rem;
-    color: #333;
-    text-decoration: none;
-    border-radius: 0.25rem;
-    transition: all 0.2s;
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  transition: all 0.2s;
 }
 
 .sidebar .dokuwiki ul li a:hover {
-    background: #e9ecef;
-    text-decoration: none;
+  background: #e9ecef;
+  text-decoration: none;
 }
 
-.sidebar .dokuwiki ul li.active > a {
-    background: #0d6efd;
-    color: white;
+.sidebar .dokuwiki ul li.active>a {
+  background: #0d6efd;
+  color: white;
 }
 
 /* Media manager */
 #mediamanager__page {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 #mediamanager__page .panel {
-    background: var(--bs-light);
-    padding: 1rem;
-    border-radius: 0.25rem;
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.25rem;
 }
 
 /* Layout fixes */
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .container-fluid {
-    flex: 1;
+  flex: 1;
 }
 
 /* TOC Styling */
 #dw__toc {
-    background: #f8f9fa;
-    padding: 1rem;
-    border-radius: 0.25rem;
-    margin-bottom: 1rem;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
 }
 
 #dw__toc h3 {
-    margin-top: 0;
-    font-size: 1.1rem;
+  margin-top: 0;
+  font-size: 1.1rem;
 }
 
 #dw__toc .toc {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 /* Page actions */
 .btn-group {
-    margin-right: 1rem;
+  margin-right: 1rem;
 }
 
 /* Media query for mobile */
 @media (max-width: 768px) {
-    #dw__toc {
-        margin-bottom: 2rem;
-    }
+  #dw__toc {
+    margin-bottom: 2rem;
+  }
 }
 
 /* Sticky TOC for desktop */
 @media (min-width: 768px) {
-    .sticky-top {
-        top: 1rem;
-    }
+  .sticky-top {
+    top: 1rem;
+  }
 }
 
 /* Sidebar improvements */
 @media (min-width: 768px) {
-    /* Override Bootstrap collapse on desktop */
-    .sidebar.collapse:not(.show) {
-        display: block !important;
-    }
 
-    .sidebar {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width: 25% !important; /* Force width for md screens */
-        max-width: 16.666667%; /* Match col-lg-2 width */
-        z-index: 100;
-        background: white;
-        overflow-y: auto;
-        padding-top: 1rem;
-        border-right: 1px solid rgba(0,0,0,.1);
-    }
+  /* Override Bootstrap collapse on desktop */
+  .sidebar.collapse:not(.show) {
+    display: block !important;
+  }
 
-    /* Adjust main content margin to prevent overlap */
-    main.ms-md-auto {
-        margin-left: 25% !important; /* Match sidebar width */
-    }
+  .sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 25% !important;
+    /* Force width for md screens */
+    max-width: 16.666667%;
+    /* Match col-lg-2 width */
+    z-index: 100;
+    background: white;
+    overflow-y: auto;
+    padding-top: 1rem;
+    border-right: 1px solid rgba(0, 0, 0, .1);
+  }
 
-    .sidebar .sticky-top {
-        position: relative;
-        top: 0;
-    }
+  /* Adjust main content margin to prevent overlap */
+  main.ms-md-auto {
+    margin-left: 25% !important;
+    /* Match sidebar width */
+  }
+
+  .sidebar .sticky-top {
+    position: relative;
+    top: 0;
+  }
 }
 
 /* Mobile sidebar improvements */
 @media (max-width: 767.98px) {
-    .sidebar {
-        padding-top: 0; /* Remove top padding since we have a header now */
-    }
-    
-    #dw__search_mobile .input-group {
-        width: 100%;
-    }
-    
-    .sidebar .dropdown-menu {
-        position: fixed;
-        max-height: 300px;
-        overflow-y: auto;
-    }
+  .sidebar {
+    padding-top: 0;
+    /* Remove top padding since we have a header now */
+  }
+
+  #dw__search_mobile .input-group {
+    width: 100%;
+  }
+
+  .sidebar .dropdown-menu {
+    position: fixed;
+    max-height: 300px;
+    overflow-y: auto;
+  }
 }
 
 /* Mobile sidebar improvements */
 @media (max-width: 767.98px) {
-    .sidebar {
-        padding-top: 0;
-    }
-    
-    /* Prevent dropdown from affecting sidebar width */
-    .sidebar .dropdown-menu {
-        position: fixed;
-        max-height: 300px;
-        overflow-y: auto;
-        width: auto !important;
-        min-width: 200px;
-    }
+  .sidebar {
+    padding-top: 0;
+  }
 
-    /* Constrain search bar width */
-    #dw__search_mobile .input-group {
-        max-width: 100%;
-    }
+  /* Prevent dropdown from affecting sidebar width */
+  .sidebar .dropdown-menu {
+    position: fixed;
+    max-height: 300px;
+    overflow-y: auto;
+    width: auto !important;
+    min-width: 200px;
+  }
 
-    /* Force dropdown to stay within sidebar bounds */
-    .sidebar .dropdown {
-        position: static;
-    }
-    
-    /* Keep sidebar width fixed */
-    .sidebar.show {
-        width: 280px !important;
-    }
+  /* Constrain search bar width */
+  #dw__search_mobile .input-group {
+    max-width: 100%;
+  }
 
-    /* Ensure dropdowns don't affect layout */
-    .dropdown-menu {
-        max-width: calc(100vw - 2rem);
-    }
+  /* Force dropdown to stay within sidebar bounds */
+  .sidebar .dropdown {
+    position: static;
+  }
 
-    /* Make dropdown float over content */
-    .dropdown-menu {
-        position: fixed !important;
-        max-height: 300px;
-        overflow-y: auto;
-        margin-top: 0 !important;
-    }
+  /* Keep sidebar width fixed */
+  .sidebar.show {
+    width: 280px !important;
+  }
 
-    /* Prevent navbar height changes */
-    .navbar {
-        height: 56px; /* Fixed navbar height */
-        overflow: visible;
-    }
+  /* Ensure dropdowns don't affect layout */
+  .dropdown-menu {
+    max-width: calc(100vw - 2rem);
+  }
 
-    .navbar .dropdown {
-        position: static;
-    }
+  /* Make dropdown float over content */
+  .dropdown-menu {
+    position: fixed !important;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 0 !important;
+  }
 
-    .navbar .dropdown-menu {
-        position: absolute;
-        right: 1rem;
-        left: auto;
-        top: 100%;
-    }
+  /* Prevent navbar height changes */
+  .navbar {
+    height: 56px;
+    /* Fixed navbar height */
+    overflow: visible;
+  }
 
-    /* Constrain search bar width */
-    #dw__search_mobile .input-group {
-        max-width: 160px;
-    }
+  .navbar .dropdown {
+    position: static;
+  }
 
-    /* Remove default margins from search form */
-    #dw__search_mobile {
-        margin: 0;
-    }
+  .navbar .dropdown-menu {
+    position: absolute;
+    right: 1rem;
+    left: auto;
+    top: 100%;
+  }
 
-    /* Remove default list styling and dots */
-    .sidebar .dokuwiki ul,
-    .sidebar .dokuwiki ul.admin_tasks {
-        list-style: none !important;
-        list-style-image: none !important;
-    }
-    
-    .sidebar .dokuwiki ul li,
-    .sidebar .dokuwiki ul.admin_tasks li {
-        list-style: none !important;
-        list-style-image: none !important;
-    }
+  /* Constrain search bar width */
+  #dw__search_mobile .input-group {
+    max-width: 160px;
+  }
+
+  /* Remove default margins from search form */
+  #dw__search_mobile {
+    margin: 0;
+  }
+
+  /* Remove default list styling and dots */
+  .sidebar .dokuwiki ul,
+  .sidebar .dokuwiki ul.admin_tasks {
+    list-style: none !important;
+    list-style-image: none !important;
+  }
+
+  .sidebar .dokuwiki ul li,
+  .sidebar .dokuwiki ul.admin_tasks li {
+    list-style: none !important;
+    list-style-image: none !important;
+  }
 }
 
 /* Mobile navbar and dropdown fixes */
 @media (max-width: 767.98px) {
-    /* Keep navbar height fixed */
-    .navbar {
-        height: 56px;
-        position: relative;
-    }
 
-    /* Fix dropdown positioning */
-    .navbar .dropdown-menu {
-        position: absolute !important;
-        top: 100% !important;
-        left: 0 !important;
-        right: 0 !important;
-        z-index: 1031;
-        margin-top: 0;
-        width: auto !important;
-        max-height: calc(100vh - 56px);
-        overflow-y: auto;
-        background: white;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
+  /* Keep navbar height fixed */
+  .navbar {
+    height: 56px;
+    position: relative;
+  }
 
-    /* Ensure dropdown container is positioned correctly */
-    .navbar .dropdown {
-        position: static !important;
-        display: inline-block;
-    }
+  /* Fix dropdown positioning */
+  .navbar .dropdown-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1031;
+    margin-top: 0;
+    width: auto !important;
+    max-height: calc(100vh - 56px);
+    overflow-y: auto;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
 
-    /* Keep other elements in navbar visible */
-    .navbar > .container-fluid {
-        position: static;
-    }
+  /* Ensure dropdown container is positioned correctly */
+  .navbar .dropdown {
+    position: static !important;
+    display: inline-block;
+  }
+
+  /* Keep other elements in navbar visible */
+  .navbar>.container-fluid {
+    position: static;
+  }
 }
 
 /* Language selector styling */
 .dropdown-menu {
-    max-height: 400px;
-    overflow-y: auto;
+  max-height: 400px;
+  overflow-y: auto;
 }
 
 /* Layout container improvements */
 .container-fluid {
-    max-width: 55cm; /* Approximately suitable for 27" monitor */
-    width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    position: relative;
-    margin: 0 auto;
+  max-width: 55cm;
+  /* Approximately suitable for 27" monitor */
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: relative;
+  margin: 0 auto;
 }
 
 /* Update sidebar positioning */
 @media (min-width: 768px) {
-    /* Container wrapper to keep sidebar with content */
+
+  /* Container wrapper to keep sidebar with content */
+  .wrapper {
+    max-width: 55cm;
+    /* Match container max-width */
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 5.4cm !important;
+    /* Changed from 9cm to 5.4cm (60% of original) */
+    min-width: 160px;
+    /* Changed from 200px to better match new width */
+  }
+
+  /* Main content positioning */
+  main.ms-md-auto {
+    margin-left: 0 !important;
+    width: calc(100% - 5.4cm);
+    /* Changed from 9cm to 5.4cm */
+  }
+
+  /* Large screen adjustments */
+  @media (min-width: 55cm) {
     .wrapper {
-        max-width: 55cm; /* Match container max-width */
-        margin: 0 auto;
-        display: flex;
-        position: relative;
+      margin: 0 0 0 auto;
     }
 
     .sidebar {
-        position: sticky;
-        top: 0;
-        height: 100vh;
-        width: 5.4cm !important; /* Changed from 9cm to 5.4cm (60% of original) */
-        min-width: 160px; /* Changed from 200px to better match new width */
+      margin-left: 0;
     }
-
-    /* Main content positioning */
-    main.ms-md-auto {
-        margin-left: 0 !important;
-        width: calc(100% - 5.4cm); /* Changed from 9cm to 5.4cm */
-    }
-
-    /* Large screen adjustments */
-    @media (min-width: 55cm) {
-        .wrapper {
-            margin: 0 0 0 auto;
-        }
-        
-        .sidebar {
-            margin-left: 0;
-        }
-    }
+  }
 }
 
 /* Remove previous responsive adjustments */
 @media (min-width: 1221px) {
-    .sidebar {
-        width: 5.4cm !important; /* Changed from 9cm to 5.4cm */
-    }
+  .sidebar {
+    width: 5.4cm !important;
+    /* Changed from 9cm to 5.4cm */
+  }
 
-    main.ms-md-auto {
-        width: calc(100% - 5.4cm); /* Changed from 9cm to 5.4cm */
-    }
+  main.ms-md-auto {
+    width: calc(100% - 5.4cm);
+    /* Changed from 9cm to 5.4cm */
+  }
 }
 
 /* Custom flex layout for sidebar and main content */
 .main-wrapper {
-    display: flex;
-    min-height: 100vh;
-    width: 100%;
-    max-width: 55cm;
-    margin: 0 auto;
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 55cm;
+  margin: 0 auto;
 }
 
 /* Update sidebar base width */
 .sidebar {
-    width: 5.4cm!important; /* Changed from 9cm to 5.4cm */
-    min-width: 160px!important; /* Changed from 200px to better match new width */
-    flex-shrink: 0;
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    overflow-y: auto;
-    background: #f8f9fa;
-    border-right: 1px solid rgba(0,0,0,.1);
-    transition: transform 0.3s ease;
+  width: 5.4cm !important;
+  /* Changed from 9cm to 5.4cm */
+  min-width: 160px !important;
+  /* Changed from 200px to better match new width */
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  background: #f8f9fa;
+  border-right: 1px solid rgba(0, 0, 0, .1);
+  transition: transform 0.3s ease;
 }
 
 main.main-content {
-    flex: 1;
-    min-width: 0;
-    overflow-x: hidden;
-    max-width: calc(55cm - 5.4cm); /* Changed from 9cm to 5.4cm */
-    padding: 1rem;
+  flex: 1;
+  min-width: 0;
+  overflow-x: hidden;
+  max-width: calc(55cm - 5.4cm);
+  /* Changed from 9cm to 5.4cm */
+  padding: 1rem;
 }
 
 /* Remove any max-width constraints on main content */
 main {
-    width: 100%;
-    display: block;
+  width: 100%;
+  display: block;
 }
 
 /* Updated responsive sidebar and navbar behavior */
 @media (min-width: 768px) {
-    /* Hide burger menu and its button on desktop */
-    .navbar-toggler {
-        display: none !important;
-    }
 
-    /* Show sidebar by default on desktop */
-    .sidebar {
-        display: block !important;
-        position: sticky;
-        top: 0;
-        height: 100vh;
-        width: 9cm !important;
-        min-width: 200px;
-        z-index: 100;
-        background: white;
-        padding-top: 1rem;
-        border-right: 1px solid rgba(0,0,0,.1);
-    }
+  /* Hide burger menu and its button on desktop */
+  .navbar-toggler {
+    display: none !important;
+  }
 
-    /* Ensure sidebar doesn't collapse on desktop */
-    .sidebar.collapse:not(.show) {
-        display: block !important;
-    }
+  /* Show sidebar by default on desktop */
+  .sidebar {
+    display: block !important;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 4.9cm !important;
+    min-width: 200px;
+    z-index: 100;
+    background: white;
+    padding-top: 1rem;
+    border-right: 1px solid rgba(0, 0, 0, .1);
+  }
 
-    /* Main content positioning */
-    main.ms-md-auto {
-        margin-left: 0 !important;
-        width: calc(100% - 9cm);
-    }
+  /* Ensure sidebar doesn't collapse on desktop */
+  .sidebar.collapse:not(.show) {
+    display: block !important;
+  }
+
+  /* Main content positioning */
+  main.ms-md-auto {
+    margin-left: 0 !important;
+    width: calc(100% - 4.9cm);
+  }
 }
 
 /* Mobile layout adjustments */
 @media (max-width: 767.98px) {
-    /* Show burger menu and properly style sidebar for mobile */
-    .sidebar {
-        display: none;
-        position: fixed;
-        top: 56px; /* Match navbar height */
-        left: 0;
-        bottom: 0;
-        width: 280px !important;
-        z-index: 1030;
-        background: white;
-        overflow-y: auto;
-        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    }
 
-    /* When sidebar is shown via burger menu */
-    .sidebar.show {
-        display: block;
-    }
+  /* Show burger menu and properly style sidebar for mobile */
+  .sidebar {
+    display: none;
+    position: fixed;
+    top: 56px;
+    /* Match navbar height */
+    left: 0;
+    bottom: 0;
+    width: 280px !important;
+    z-index: 1030;
+    background: white;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
 
-    /* Ensure navbar stays above sidebar */
-    .navbar {
-        z-index: 1031;
-    }
+  /* When sidebar is shown via burger menu */
+  .sidebar.show {
+    display: block;
+  }
 
-    /* Main content takes full width on mobile */
-    main.ms-md-auto {
-        width: 100%;
-        margin-left: 0 !important;
-    }
+  /* Ensure navbar stays above sidebar */
+  .navbar {
+    z-index: 1031;
+  }
+
+  /* Main content takes full width on mobile */
+  main.ms-md-auto {
+    width: 100%;
+    margin-left: 0 !important;
+  }
 }
 
-.main-content-row{
+.main-content-row {
   flex-wrap: nowrap;
 }
 
@@ -2352,7 +2621,8 @@ main {
   min-height: 100vh;
   width: 100%;
   max-width: 55cm;
-  margin: 0 auto; /* Center the wrapper when screen is wider */
+  margin: 0 auto;
+  /* Center the wrapper when screen is wider */
 }
 
 /* Container for the entire layout */
@@ -2364,11 +2634,13 @@ main {
 
 @media (min-width: 55cm) {
   .page-container {
-    padding: 0 1rem; /* Add some padding on very wide screens */
+    padding: 0 1rem;
+    /* Add some padding on very wide screens */
   }
-  
+
   .main-wrapper {
-    margin: 0 auto; /* Ensure centering on wide screens */
+    margin: 0 auto;
+    /* Ensure centering on wide screens */
   }
 }
 
@@ -2382,16 +2654,19 @@ main {
   height: 100vh;
   overflow-y: auto;
   background: #f8f9fa;
-  border-right: 1px solid rgba(0,0,0,.1);
+  border-right: 1px solid rgba(0, 0, 0, .1);
   transition: transform 0.3s ease;
 }
 
 main.main-content {
   flex: 1;
-  min-width: 0; /* Prevents flex items from overflowing */
+  min-width: 0;
+  /* Prevents flex items from overflowing */
   overflow-x: hidden;
-  max-width: calc(55cm - 5.4cm); /* Maximum content width minus sidebar width */
-  padding: 1rem; /* Add padding to the main content */
+  max-width: calc(55cm - 5.4cm);
+  /* Maximum content width minus sidebar width */
+  padding: 1rem;
+  /* Add padding to the main content */
 }
 
 /* Adjust transition for create/edit and old revisions icons */
@@ -2399,6 +2674,7 @@ main.main-content {
   .btn-group .btn span.d-none.d-md-inline {
     display: none !important;
   }
+
   .btn-group .btn span.d-md-none {
     display: inline !important;
   }
@@ -2431,47 +2707,53 @@ main.main-content {
 
 /* Adjust sidebar for mobile to take full width */
 @media (max-width: 767.98px) {
-    .sidebar {
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        left: -100%;
-        transition: left 0.3s ease;
-        background-color: #ffffff; /* Adjust as needed */
-        z-index: 1050; /* Ensure it's above other elements */
-    }
-    .sidebar.show {
-        left: 0;
-    }
+  .sidebar {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    transition: left 0.3s ease;
+    background-color: #ffffff;
+    /* Adjust as needed */
+    z-index: 1050;
+    /* Ensure it's above other elements */
+  }
 
-    /* Style for the close button */
-    #sidebarCloseButton {
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        z-index: 1060;
-    }
+  .sidebar.show {
+    left: 0;
+  }
 
-    /* Ensure navigation takes full height */
-    .sidebar-nav {
-        height: 100%;
-        overflow-y: auto;
-    }
+  /* Style for the close button */
+  #sidebarCloseButton {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 1060;
+  }
+
+  /* Ensure navigation takes full height */
+  .sidebar-nav {
+    height: 100%;
+    overflow-y: auto;
+  }
 }
 
 [data-bs-theme="dark"] body {
-    background-color: #121212; /* Example dark background color */
+  background-color: #121212;
+  /* Example dark background color */
 }
 
 [data-bs-theme="dark"] .main-content {
-    border: 1px solid #333333; /* Example dark border color */
-    border: none;
-    background-image: none!important;
+  border: 1px solid #333333;
+  /* Example dark border color */
+  border: none;
+  background-image: none !important;
 
 }
+
 body {
-  background-image: none!important;
+  background-image: none !important;
 }
 
 /* Main content styling */
@@ -2501,7 +2783,8 @@ main.main-content {
 /* New TOC styling */
 .sidebar-toc {
   position: sticky;
-  top: 5rem; /* Adjust based on your navbar height + desired spacing */
+  top: 5rem;
+  /* Adjust based on your navbar height + desired spacing */
   max-height: calc(100vh - 6rem);
   overflow-y: auto;
 }
@@ -2553,10 +2836,21 @@ main.main-content {
 }
 
 /* Level indentation */
-.sidebar-toc #dw__toc ul.toc li.level2 { padding-left: 0; }
-.sidebar-toc #dw__toc ul.toc li.level3 { padding-left: 1rem; }
-.sidebar-toc #dw__toc ul.toc li.level4 { padding-left: 2rem; }
-.sidebar-toc #dw__toc ul.toc li.level5 { padding-left: 3rem; }
+.sidebar-toc #dw__toc ul.toc li.level2 {
+  padding-left: 0;
+}
+
+.sidebar-toc #dw__toc ul.toc li.level3 {
+  padding-left: 1rem;
+}
+
+.sidebar-toc #dw__toc ul.toc li.level4 {
+  padding-left: 2rem;
+}
+
+.sidebar-toc #dw__toc ul.toc li.level5 {
+  padding-left: 3rem;
+}
 
 /* Dark mode support */
 [data-bs-theme="dark"] .sidebar-toc #dw__toc {
@@ -2596,21 +2890,19 @@ main.main-content {
   background-color: var(--header-bg);
 }
 
-.sidebar-toc #dw__toc
-{
-  width: auto!important;
-} 
+.sidebar-toc #dw__toc {
+  width: auto !important;
+}
 
-.sidebar-toc #dw__toc strong
-{
+.sidebar-toc #dw__toc strong {
   display: none;
-} 
+}
 
 .sidebar-toc #dw__toc .toc {
   list-style: none;
   /* Reduce padding */
-  padding: 0rem!important;
-  border: none!important;
+  padding: 0rem !important;
+  border: none !important;
   margin: 0;
   background-color: var(--card-bg);
 }
@@ -2644,16 +2936,21 @@ main.main-content {
 }
 
 /* Adjust level indentation to be smaller */
-.sidebar-toc #dw__toc ul.toc li.level2 { padding-left: 0.5rem; }
-.sidebar-toc #dw__toc ul.toc li.level3 { 
+.sidebar-toc #dw__toc ul.toc li.level2 {
+  padding-left: 0.5rem;
+}
+
+.sidebar-toc #dw__toc ul.toc li.level3 {
   padding-left: 1rem;
   border-left: 1px solid var(--border-color);
 }
-.sidebar-toc #dw__toc ul.toc li.level4 { 
+
+.sidebar-toc #dw__toc ul.toc li.level4 {
   padding-left: 1.5rem;
   border-left: 1px solid var(--border-color);
 }
-.sidebar-toc #dw__toc ul.toc li.level5 { 
+
+.sidebar-toc #dw__toc ul.toc li.level5 {
   padding-left: 2rem;
   border-left: 1px solid var(--border-color);
 }
